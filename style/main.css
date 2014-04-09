@@ -5,7 +5,10 @@ html, body {
   background: #faf8ef;
   color: #776e65;
   font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
-  font-size: 18px; }
+  font-size: 18px;
+  -webkit-animation: background-gradient-change linear 6s infinite alternate;
+  -moz-animation: background-gradient-change linear 6s infinite alternate;
+  -moz-animation: background-gradient-change linear 6s infinite alternate; } }
 
 body {
   margin: 80px 0; }
@@ -49,6 +52,36 @@ h1.title {
     top: -50px;
     opacity: 0; } }
 
+  @-webkit-keyframes fade-in-out {
+    0% {
+      opacity: 0; }
+      
+    50% {
+      opacity: 1; }
+
+    100% {
+      opacity: 0; } }
+
+  @-moz-keyframes fade-in-out {
+    0% {
+      opacity: 0; }
+      
+    50% {
+      opacity: 1; }
+
+    100% {
+      opacity: 0; } }
+
+  @keyframes fade-in-out {
+    0% {
+      opacity: 0; }
+      
+    50% {
+      opacity: 1; }
+
+    100% {
+      opacity: 0; } }
+      
 .scores-container {
   float: right;
   text-align: right; }
@@ -159,6 +192,24 @@ hr {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
+.game-container .ppl-says {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;}
+  .game-container .ppl-says p {
+    position:fixed;
+    font-size: 60px;
+    font-weight: bold;
+    height: 60px;
+    line-height: 60px;
+    -webkit-animation: fade-in-out 600ms ease-in;
+    -moz-animation: fade-in-out 600ms ease-in;
+    animation: fade-in-out 600ms ease-in;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both; }
+    
   .game-container .game-message {
     display: none;
     position: absolute;
@@ -578,7 +629,7 @@ hr {
         color: #f9f6f2; }
         .game-container .game-message.game-won a.keep-playing-button {
           display: inline-block; }
-      .game-container .game-message.game-won, .game-container .game-message.game-over {
+      .game-container .game-message.game-won, .game-container **sage.game-over {
         display: block; }
 
   .grid-container {
@@ -683,6 +734,11 @@ hr {
   .tile .tile-inner {
     font-size: 35px;
     }
+
+  .ppl-says p {
+    font-size: 30px !important;
+    height: 30px !important;
+    line-height: 30px !important;}
 
   .game-message p {
     font-size: 30px !important;

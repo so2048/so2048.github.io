@@ -3,9 +3,12 @@ function HTMLActuator() {
   this.scoreContainer   = document.querySelector(".score-container");
   this.bestContainer    = document.querySelector(".best-container");
   this.messageContainer = document.querySelector(".game-message");
-
+  this.pplSays = document.querySelector(".ppl-says");
   this.score = 0;
 }
+
+  //var pplSaying = ['Фуууу, шерсть!','Kulnev','Shuk','Kolevat','Push','Milyaeva', 'Ммм, это приятно','Shihova' ,'РРРРРРРРРРР!', 'Долой спевки!! >:C' ,'А кто такая Лейла?'];
+    var pplSaying = ['Фуууу, шерсть!','ヾ(´〇｀)ﾉ♪♪♪','','○∞∞∞∞ヽ(^ー^ )','','Nothing to do here  C=┌(｀ー´)┘', 'Ммм, это приятно','┐('～`)┌' ,'РРРРРРРРРРР!', 'Долой спевки!! >:C' ,'А кто такая Лейла?'];
 
 HTMLActuator.prototype.actuate = function (grid, metadata) {
   var self = this;
@@ -105,6 +108,7 @@ HTMLActuator.prototype.positionClass = function (position) {
 
 HTMLActuator.prototype.updateScore = function (score) {
   this.clearContainer(this.scoreContainer);
+  this.clearContainer(this.pplSays);
 
   var difference = score - this.score;
   this.score = score;
@@ -115,8 +119,19 @@ HTMLActuator.prototype.updateScore = function (score) {
     var addition = document.createElement("div");
     addition.classList.add("score-addition");
     addition.textContent = "+" + difference;
-
     this.scoreContainer.appendChild(addition);
+
+    var dif = Math.floor(Math.log(difference)/Math.LN2);
+    var message = pplSaying[dif-2];
+    var messegeElement = document.createElement("p");
+    messegeElement.textContent = message;
+    var left = 'left:' + Math.round(Math.random() * 80) + '%;',
+        top = 'top:' + Math.round(Math.random() * 80) + '%;',
+        color = 'color: rgb(' + Math.round(Math.random() * 255) + ', ' + Math.round(Math.random() * 255) + ', ' + Math.round(Math.random() * 255) + ');',
+        styleString = left + top + color;
+    messegeElement.setAttribute('style', styleString);
+    this.pplSays.appendChild(messegeElement);
+
   }
 };
 
