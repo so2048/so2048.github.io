@@ -8,7 +8,7 @@ function HTMLActuator() {
 }
 
   //var pplSaying = ['Фуууу, шерсть!','Kulnev','Shuk','Kolevat','Push','Milyaeva', 'Ммм, это приятно','Shihova' ,'РРРРРРРРРРР!', 'Долой спевки!! >:C' ,'А кто такая Лейла?'];
-    var pplSaying = ['Фуууу, шерсть!','ヾ(´〇｀)ﾉ♪♪♪','','○∞∞∞∞ヽ(^ー^ )','','Nothing to do here  C=┌(｀ー´)┘', 'Ммм, это приятно','┐('～`)┌' ,'РРРРРРРРРРР!', 'Долой спевки!! >:C' ,'А кто такая Лейла?'];
+    var pplSaying = ['Фуууу, шерсть!','ヾ(´〇｀)ﾉ♪♪♪','','○∞∞∞∞ヽ(^ー^ )','','Nothing to do here  C=┌(｀ー´)┘', 'Ммм, это приятно','' ,'РРРРРРРРРРР!', 'Долой спевки!! >:C' ,'А кто такая Лейла?'];
 
 HTMLActuator.prototype.actuate = function (grid, metadata) {
   var self = this;
